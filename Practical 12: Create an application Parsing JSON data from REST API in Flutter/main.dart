@@ -106,4 +106,25 @@ class _DataScreenState extends State<DataScreen> {
                           Text(
                             post.title,
                             style: TextStyle(
-                              fontWeight
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
+                          ),
+                          SizedBox(height: 5),
+                          Text(post.body),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              );
+            } else if (snapshot.hasError) {
+              return Text("${snapshot.error}");
+            }
+            return CircularProgressIndicator();
+          },
+        ),
+      ),
+    );
+  }
+}
